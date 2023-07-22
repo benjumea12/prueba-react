@@ -27,7 +27,7 @@ const Header: FC<HTMLAttributes<HTMLHeadElement>> = () => {
           <img
             className="avatar"
             src={data?.picture?.large}
-            alt="Avatar de usuario"
+            alt={`${data?.name?.first} avatar`}
           />
         </figure>
       </div>

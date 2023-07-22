@@ -46,7 +46,7 @@ const UsersPage = (props: { country: string }) => {
       <ul className="users-list">
         {data?.map((user) => (
           <li className="user-item">
-            <img src={user.picture?.large} alt="" />
+            <img src={user.picture?.large} alt={`${user.name?.first} avatar`} />
             <h2>
               {user.name?.first} {user.name?.last}
             </h2>
