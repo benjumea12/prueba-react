@@ -62,6 +62,8 @@ const UsersPage = (props: { country: string }) => {
         ))}
       </ul>
 
+      {isLoading && <div>Loading...</div>}
+
       <div className="pagination">
         <button onClick={() => setPageIndex(pageIndex + 1)}>
           More results
