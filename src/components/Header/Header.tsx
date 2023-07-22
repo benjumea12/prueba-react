@@ -6,7 +6,7 @@ import { GetUSer } from "../../services/app.services"
 import { HeaderStyled } from "./Header.styled"
 
 const Header: FC<HTMLAttributes<HTMLHeadElement>> = () => {
-  const { data, isLoading, error } = useSWR("/getuser", GetUSer)
+  const { data, isLoading, error } = useSWR("user", GetUSer)
 
   if (isLoading) {
     return <HeaderStyled>Cargando...</HeaderStyled>

@@ -1,6 +1,5 @@
 // Styled
 import { MainPage } from "./Home.styled"
-
 // Components
 import { Header, NavBar } from "../../components"
 
@@ -9,6 +8,7 @@ const HomePage = () => {
     <MainPage>
       <Header />
       <NavBar />
+      {/* Other content... */}
     </MainPage>
   )
 }

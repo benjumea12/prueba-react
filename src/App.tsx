@@ -7,7 +7,7 @@ import { appTheme } from "./theme/app.theme"
 const HomePage = lazy(() => import("./pages/home"))
 const NationalitiesPage = lazy(() => import("./pages/Nationalities"))
 const UsersPage = lazy(() => import("./pages/Users"))
-
+// Global styles styled-component
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Merriweather', serif;
@@ -20,12 +20,10 @@ const GlobalStyle = createGlobalStyle`
 const Scope = (props: { base: string; children: ReactNode }) => {
   const router = useRouter()
   const [parentLocation] = useLocation()
-
   const nestedBase = `${router.base}${props.base}`
 
   // don't render anything outside of the scope
   if (!parentLocation.startsWith(nestedBase)) return null
-
   // we need key to make sure the router will remount if the base changes
   return (
     <Router base={nestedBase} key={nestedBase}>

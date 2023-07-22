@@ -3,27 +3,34 @@ import { useEffect, useState } from "react"
 import useSWR from "swr"
 import { GetUSerNationality } from "../../services/app.services" // Styled
 import { MainPage } from "./Users.styled"
+import { TUser } from "../../types/app.types"
 
 const UsersPage = (props: { country: string }) => {
   const { country } = props
-  const [pageIndex, setPageIndex] = useState(1)
+  const [pageIndex, setPageIndex] = useState(0)
+  const [users, setUsers] = useState<Array<TUser>>([])
 
   // Get users per nationality
-  const { data, isLoading, error, mutate } = useSWR("/getusernationality", () =>
+  const { data, isLoading, error, mutate } = useSWR("users", () =>
     GetUSerNationality(country, pageIndex)
   )
 
   // Effects
   useEffect(() => {
+    if (data) {
+      setUsers(users.concat(data))
+    }
+  }, [data])
+
+  useEffect(() => {
     mutate()
   }, [pageIndex])
 
   useEffect(() => {
-    if (pageIndex === 1) {
-      mutate()
-    } else {
-      setPageIndex(1)
-    }
+    // Reset the pager when changing country
+    setUsers([])
+    setPageIndex(1)
+    mutate()
   }, [country])
 
   // Is error
@@ -44,8 +51,8 @@ const UsersPage = (props: { country: string }) => {
       <h1>Users</h1>
 
       <ul className="users-list">
-        {data?.map((user) => (
-          <li className="user-item">
+        {users?.map((user, index) => (
+          <li className="user-item" key={index}>
             <img src={user.picture?.large} alt={`${user.name?.first} avatar`} />
             <h2>
               {user.name?.first} {user.name?.last}

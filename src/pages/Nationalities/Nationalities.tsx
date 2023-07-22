@@ -5,7 +5,6 @@ import { MainPage } from "./Nationalities.styled"
 
 const NationalitiesPage = (props: { children: ReactNode }) => {
   const { children } = props
-
   const [selected, setSelected] = useState<string | null>(null)
 
   return (

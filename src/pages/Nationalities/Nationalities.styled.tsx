@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const MainPage = styled.div<{ selected: string | null }>`
+export const MainPage = styled.main<{ selected: string | null }>`
   padding: 4em 10%;
 
   .countries-list {
