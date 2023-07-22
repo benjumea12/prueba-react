@@ -20,7 +20,7 @@ const NationalitiesPage = (props: { children: ReactNode }) => {
         >
           <img
             src="https://astelus.com/wp-content/viajes/el-origen-de-la-bandera-de-australia-1152x759.png"
-            alt=""
+            alt="Flag of AUSTRALIA"
           />
           AUSTRALIA
         </Link>
@@ -31,7 +31,7 @@ const NationalitiesPage = (props: { children: ReactNode }) => {
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/300px-Flag_of_Brazil.svg.png"
-            alt=""
+            alt="Flag of BRASIL"
           />
           BRASIL
         </Link>
@@ -42,7 +42,7 @@ const NationalitiesPage = (props: { children: ReactNode }) => {
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/2560px-Flag_of_Canada.svg.png"
-            alt=""
+            alt="Flag of CANADÁ"
           />
           CANADÁ
         </Link>
